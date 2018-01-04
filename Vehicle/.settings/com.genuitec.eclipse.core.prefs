@@ -1,0 +1,4 @@
+#Mon Dec 04 15:56:20 CST 2017
+eclipse.preferences.version=1
+validator.Checked=WebRoot/login/Register.jsp,WebRoot/Test/UserInfo.jsp,WebRoot/easyui
+validator.Unchecked=

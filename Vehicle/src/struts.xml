@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant value="UTF-8" name="struts.i18n.encoding"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+<!--  <constant name="struts.multipart.saveDir" value="/upload"/>  -->
+	<package name="VVV" namespace="/" extends="json-default">
+	
+		<action name="Login_*" class="com.action.LoginAction" method="{1}">
+			<result name="adminSuccess">/admin/AdminMain.jsp</result>
+			<result name="input">/login/Jsp.jsp</result>
+			<result name="userSuccess">/Test/UserMain.jsp</result>
+			<result name="noFill">/Test/UserInfo.jsp</result>
+			<result name="Fill">/Test/Information.jsp</result>
+		</action>
+		
+		<action name="alterPwd" class="com.action.LoginAction" method="alterPwd">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="Project_*" class="com.action.ProjectAction" method="{1}">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="User_*" class="com.action.UserAction" method="{1}">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="Register_*" class="com.action.RegisterAction" method="{1}">
+			<result name="good" >/Test/Information.jsp</result>
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+			<action name="UserInfo_*" class="com.action.UserInfoAction" method="{1}">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="Information" class="com.action.UserInfoAction" method="info">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="Comment_*" class="com.action.CommentAction" method="{1}">
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="Notes_*" class="com.action.NotesAction" method="{1}">
+			<result type="json">
+				<param name="root">resultObject</param>
+			</result>
+		</action>
+		
+		<action name="Topic_*" class="com.action.TopicAction" method="{1}">
+			<result name="All">/Forum/Forum.jsp</result>
+			<result name="Content">/Forum/Content.jsp</result>
+			<result name="Review">/Forum/Review.jsp</result>
+			<result name="Discuss">/Forum/Discuss.jsp</result>
+			<result name="Reply">/Forum/Review.jsp</result>
+			<result type="json">
+				<param name="root">resultObj</param>
+			</result>
+		</action>
+		
+		<action name="News_*" class="com.action.NewsAction" method="{1}">
+			<result name="News">/News/IssueNews.jsp</result>		
+		</action>
+	</package>
+</struts>    
